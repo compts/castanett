@@ -13,4 +13,5 @@
 build
 dist
 src/castanett_backup_2023_10
+src/castanett.egg-info
 notes
