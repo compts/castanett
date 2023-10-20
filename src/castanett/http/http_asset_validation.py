@@ -1,5 +1,6 @@
 from castanett.core.support import *
 import re
+
 class HttpAssetValidation:
     def __init__(self,directory=[]):
         self.directory = directory

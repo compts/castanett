@@ -30,7 +30,7 @@ setup(
     include_package_data=True,
     
     entry_points={'console_scripts': [
-        'castanett = castanett.management:autoload',
+        'castanett = castanett.command:autoload',
     ]},
     install_requires=[],
     platforms='any',

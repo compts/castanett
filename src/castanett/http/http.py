@@ -1,11 +1,9 @@
-import re
-
 from castanett.http.http_validation import HttpValidation
 from castanett.http.http_asset_validation import HttpAssetValidation
 from castanett.management.routes_config import RoutesConfig
 from castanett.application.default_method import error_404
-
 from castanett.http.response import Response
+
 class Http:
     def __init__(self):
         pass

@@ -25,7 +25,7 @@ class Response():
             if PATH_INFO == routes:
                 request = Request({},self.environ)
                 action_str = action(request)
-                if action_str.status == 200:
+                if action_str.status in [200,201]:
                     return {
                         'content':action_str.content,
                         'status':200,

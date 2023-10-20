@@ -1,5 +1,6 @@
 from castanett.core.support import *
 import re
+
 class HttpValidation:
     def __init__(self,args={},environ={}):
         self.args = args

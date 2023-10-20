@@ -13,6 +13,7 @@ def setup(set_prefix=True):
     import castanett.apps
     import castanett.config
     import castanett.initialize
+    import castanett.command
     import helper
     import management
     import application
