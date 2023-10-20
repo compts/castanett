@@ -8,7 +8,8 @@ class HttpValidation:
         self.bool_validate = False
         self.method_type = ""
         self.environ = environ
-        self.__init_method_exist();
+        self.__init_method_exist()
+
     def is_validate_method_exist(self):
 
         return {"type":self.method_type,"status":self.bool_validate} #
@@ -16,6 +17,7 @@ class HttpValidation:
     def get_values(self):
 
         return self.values
+
     def __init_method_exist(self):
         self.values = self.args
         self.values["sys_default"] = {}
@@ -82,6 +84,7 @@ class HttpValidation:
                     self.values["sys_default"][loc_type ] = loc_value
 
         self.bool_validate = 'action' in self.values["sys_default"]
+
     def __execute_error(self):
         self.bool_validate = True
 

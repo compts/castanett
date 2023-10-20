@@ -1,8 +1,7 @@
 import socket  # Networking support
 import time    # Current time
-
 from castanett.application.reference import HTTP_STATUS_CODES,DEFAULT_RESPONSE_PREFERENCE,REQUEST_METHOD
-#https://github.com/pallets/werkzeug/blob/0d6d93e5b545fbb81bd0604d9e13fa4e05eea528/werkzeug/serving.py
+
 
 class WSGI():
     def __init__(self):
@@ -105,6 +104,7 @@ class WSGI():
 
     def _initialize_server_response(self,status,set_header):
         pass
+
     def _wait_for_connections(self):
         """ Main loop awaiting connections """
         while True:

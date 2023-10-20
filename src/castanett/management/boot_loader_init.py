@@ -10,7 +10,6 @@ class BootloaderInit(ExecuteManage):
         view = self.load_views
         app_wsgi.activate_server(view)
 
-
     def load_page_content(self,environ, start_response):
         view = self.load_views(environ,start_response)
 

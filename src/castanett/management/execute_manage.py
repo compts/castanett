@@ -1,4 +1,5 @@
 from castanett.http.server import Server
+
 class ExecuteManage:
 
     def __init__(self):
@@ -9,16 +10,12 @@ class ExecuteManage:
 
         self.local_routes = classs
 
-
     def  setConfig(self,classs):
         self.local_config = classs
-
 
     def  getRoutes(self):
 
         return self.local_routes
-
-
 
     def getConfig(self):
         return self.local_config

@@ -5,7 +5,6 @@ class HttpAssetValidation:
     def __init__(self,directory=[]):
         self.directory = directory
 
-
     def is_asset(self,args={},environ={}):
         self.args = args
         self.values = {}

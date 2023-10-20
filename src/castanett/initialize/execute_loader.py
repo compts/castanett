@@ -1,10 +1,11 @@
 from castanett.management.boot_loader_init import BootloaderInit
-
 from castanett.config.config_loader import ConfigLoader
+
 class Executeloader(BootloaderInit):
 
     def initConfig(self):
         self.config_load = ConfigLoader({})
+
     def defineRoutes(self,value):
         self.setRoutes(value);
 
