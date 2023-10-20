@@ -2,7 +2,7 @@ from castanett.initialize.execute_loader import Executeloader
 from urllib.parse import urlparse, quote
 import os
 
-class Castanett(Executeloader):
+class Webserver(Executeloader):
     def __init__(self,name="Castanett"):
         self.local_name = name;
         self.cwd = os.getcwd()

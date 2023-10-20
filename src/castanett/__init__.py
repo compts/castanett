@@ -1,8 +1,9 @@
 __version__ = "1.0.0a0"
 
 
-from .castanett import Castanett
+from .webserver import Webserver
 from .routes import Routes
+
 def setup(set_prefix=True):
     """
     Configure the settings (this happens as a side effect of accessing the
@@ -10,8 +11,8 @@ def setup(set_prefix=True):
     Set the thread-local urlresolvers script prefix if `set_prefix` is True.
     """
     import castanett.apps
-    import config
-    import initialize
+    import castanett.config
+    import castanett.initialize
     import helper
     import management
     import application

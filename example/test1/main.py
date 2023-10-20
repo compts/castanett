@@ -1,4 +1,4 @@
-from castanett import Castanett
+from castanett.webserver import Webserver
 from castanett.routes import Routes
 
 def index(request):
@@ -62,7 +62,7 @@ rts.url("/",index)
 rts.url("/post/",post)
 rts.url("/home/index",home().index);
 
-app = Castanett()
+app = Webserver()
 app.setDefaultConfig({})
 app.setDefaultRoute(rts)
 app.run(host="localhost",port=4041);
