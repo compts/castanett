@@ -2,7 +2,7 @@ import socket  # Networking support
 import signal  # Signal support (server shutdown on signal receive)
 import time    # Current time
 
-from castanett.application.reference import DEFAULT_RESPONSE_PREFERENCE,REQUEST_METHOD
+from castanett.application.reference import HTTP_STATUS_CODES,DEFAULT_RESPONSE_PREFERENCE,REQUEST_METHOD
 #https://github.com/pallets/werkzeug/blob/0d6d93e5b545fbb81bd0604d9e13fa4e05eea528/werkzeug/serving.py
 
 class WSGI():
@@ -69,10 +69,9 @@ class WSGI():
 
         # determine response code
         h = ''
-        if (code == 200):
-            h = self.value_environ['SERVER_PROTOCOL']+' 200 OK\n'
-        elif(code == 404):
-            h = self.value_environ['SERVER_PROTOCOL']+' 404 Not Found\n'
+        if code in HTTP_STATUS_CODES:
+            h = '%s %s %s\n' % (self.value_environ['SERVER_PROTOCOL'], code, HTTP_STATUS_CODES[code] )
+
 
         # write further headers
         current_date = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())

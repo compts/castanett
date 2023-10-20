@@ -28,7 +28,8 @@ class Response():
                 if action_str.status == 200:
                     return {
                         'content':action_str.content,
-                        'status':200
+                        'status':200,
+                        'header':[]
                     }
                 else:
                     error_code  = action_str.status
@@ -36,9 +37,11 @@ class Response():
         if error_code in self.uri_error:
             return {
                 'content': self.uri_error[error_code]['action'](),
-                'status': error_code
+                'status': error_code,
+                'header':[]
             }
         return {
                 'content':"Server unavailable",
-                'status':500
+                'status':500,
+                'header':[]
             }

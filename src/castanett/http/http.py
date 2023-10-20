@@ -30,7 +30,7 @@ class Http:
 
     def __execute_error_http(self):
         app =RoutesConfig();
-        if "404" not in self.raw_routes_error:
+        if 404 not in self.raw_routes_error:
             app.error(404,error_404)
         for v in app.assign_routes:
             self.raw_routes_error[v['routes']] = v
