@@ -12,7 +12,7 @@ python setup.py install
 ```
 
  ## Play this code
- Under the directory `example/test1` we had a sample your play around
+ Under the directory `example/test1` we had a sample code that you can play around
 
  ```bash
 python main.py
