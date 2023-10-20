@@ -1,2 +1,2 @@
 def autoload():
-    print("Autoload")
+    print("Autoload load")

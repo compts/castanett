@@ -9,7 +9,7 @@ def setup(set_prefix=True):
     first setting), configure logging and populate the app registry.
     Set the thread-local urlresolvers script prefix if `set_prefix` is True.
     """
-    import apps
+    import castanett.apps
     import config
     import initialize
     import helper

@@ -9,14 +9,12 @@ class Server(Http):
         self.environ = [];
         self.start_response = None
         self.middle_ware = [];
+        self.raw_media_directory = [];
 
 
         self.is_url_request = False;
     def set_routes(self,routes=[]):
         self.variable_routes = routes
-
-    def set_middle_ware(self,middle_ware=[]):
-        self.raw_middle_ware = middle_ware
 
     def set_middle_ware(self,middle_ware=[]):
         self.raw_middle_ware = middle_ware

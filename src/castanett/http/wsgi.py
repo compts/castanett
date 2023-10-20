@@ -1,5 +1,4 @@
 import socket  # Networking support
-import signal  # Signal support (server shutdown on signal receive)
 import time    # Current time
 
 from castanett.application.reference import HTTP_STATUS_CODES,DEFAULT_RESPONSE_PREFERENCE,REQUEST_METHOD
@@ -7,8 +6,8 @@ from castanett.application.reference import HTTP_STATUS_CODES,DEFAULT_RESPONSE_P
 
 class WSGI():
     def __init__(self):
-        self.host=None;
-        self.port=None;
+        self.host=None
+        self.port=None
 
         self.www_dir = 'www'
         self.value_environ = DEFAULT_RESPONSE_PREFERENCE
@@ -16,8 +15,8 @@ class WSGI():
 
 
     def address(self,host="0.0.0.0",port=5000):
-        self.host=host;
-        self.port=port;
+        self.host=host
+        self.port=port
 
 
     def activate_server(self,method):
@@ -59,7 +58,7 @@ class WSGI():
         """ Shut down the server """
         try:
             print("Shutting down the server")
-            s.socket.shutdown(socket.SHUT_RDWR)
+            self.socket.shutdown(socket.SHUT_RDWR)
 
         except Exception as e:
             print("Warning: could not shut down the socket. Maybe it was already closed?",e)

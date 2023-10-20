@@ -2,25 +2,27 @@ from castanett.http.server import Server
 class ExecuteManage:
 
     def __init__(self):
-        self.local_routes=null;
-        self.local_config=null;
+        self.local_routes=None
+        self.local_config=None
 
     def  setRoutes(self,classs):
 
-        self.local_routes = classs;
+        self.local_routes = classs
 
 
     def  setConfig(self,classs):
-        self.local_config = classs;
+        self.local_config = classs
 
 
     def  getRoutes(self):
 
-        return self.local_routes;
+        return self.local_routes
+
 
 
     def getConfig(self):
-        return self.local_config;
+        return self.local_config
+
     def load_views(self,environ, start_response):
 
         http_class = Server()
