@@ -14,12 +14,11 @@ def setup(set_prefix=True):
     import castanett.config
     import castanett.initialize
     import castanett.command
-    import helper
-    import management
-    import application
-    import core
-    import http
-    import implement
-    import management
-    import security
-    import session
+    import castanett.helper
+    import castanett.management
+    import castanett.application
+    import castanett.core
+    import castanett.http
+    import castanett.implement
+    import castanett.security
+    import castanett.session

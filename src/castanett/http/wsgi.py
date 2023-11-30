@@ -11,16 +11,15 @@ class WSGI():
         self.www_dir = 'www'
         self.value_environ = DEFAULT_RESPONSE_PREFERENCE
         self.load_view = None
-
+        self.socket = None
 
     def address(self,host="0.0.0.0",port=5000):
         self.host=host
         self.port=port
 
-
     def activate_server(self,method):
         self.load_view = method
-        """ Attempts to aquire the socket and launch the server """
+
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try: # user provided in the __init__() port may be unavaivable
             print("Launching HTTP server on ", self.host, ":",self.port)
@@ -28,7 +27,7 @@ class WSGI():
 
         except Exception as e:
             print ("Warning: Could not aquite port:",self.port,"\n")
-            print ("I will try a higher port")
+            print (e)
             # store to user provideed port locally for later (in case 8080 fails)
             user_port = self.port
             if type(user_port)=='int':
@@ -41,11 +40,13 @@ class WSGI():
                 self.socket.bind((self.host, self.port))
 
             except Exception as e:
-                print("ERROR: Failed to acquire sockets for ports ", user_port, " and 8080. ")
-                print("Try running the Server in a privileged user mode.")
+                print("ERROR: Failed to acquire sockets for ports "+ user_port+ " and 8080. ")
+                print(e)
+
                 self.shutdown()
                 import sys
                 sys.exit(1)
+
         self.value_environ['SERVER_PORT'] = self.port
         self.value_environ['REMOTE_PORT'] = self.port
 
